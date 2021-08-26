@@ -1,1 +1,1 @@
-Sitemap: https://nilick.github.io/hmbnn-blog/sitemap.xml
+Sitemap: nilick.github.io/hmbnn-blog/sitemap.xml
