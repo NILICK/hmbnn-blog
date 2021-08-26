@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Machine Learning with Python | EnviSci-Py</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Machine Learning with Python" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is about Machine Learning using Python" />
+<meta property="og:description" content="This post is about Machine Learning using Python" />
+<link rel="canonical" href="nilick.github.io/hmbnn-blog/machine%20learning/python/course/2021/06/08/ML-comments.html" />
+<meta property="og:url" content="nilick.github.io/hmbnn-blog/machine%20learning/python/course/2021/06/08/ML-comments.html" />
+<meta property="og:site_name" content="EnviSci-Py" />
+<meta property="og:image" content="nilick.github.io/hmbnn-blog/images/Machine-Learning-Python.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-08T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This post is about Machine Learning using Python","url":"nilick.github.io/hmbnn-blog/machine%20learning/python/course/2021/06/08/ML-comments.html","@type":"BlogPosting","headline":"Machine Learning with Python","dateModified":"2021-06-08T00:00:00-05:00","datePublished":"2021-06-08T00:00:00-05:00","image":"nilick.github.io/hmbnn-blog/images/Machine-Learning-Python.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"nilick.github.io/hmbnn-blog/machine%20learning/python/course/2021/06/08/ML-comments.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hmbnn-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="nilick.github.io/hmbnn-blog/feed.xml" title="EnviSci-Py" /><link rel="shortcut icon" type="image/x-icon" href="/hmbnn-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hmbnn-blog/">EnviSci-Py</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hmbnn-blog/about/">About Me</a><a class="page-link" href="/hmbnn-blog/search/">Search</a><a class="page-link" href="/hmbnn-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Machine Learning with Python</h1><p class="page-description">This post is about Machine Learning using Python</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-08T00:00:00-05:00" itemprop="datePublished">
+        Jun 8, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      19 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#machine learning">machine learning</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#python">python</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#course">course</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#What-Is-Holding-You-Back-From-Your-Machine-Learning-Goals?">What Is Holding You Back From Your Machine Learning Goals? </a></li>
+<li class="toc-entry toc-h2"><a href="#Self-Limiting-Belief">Self-Limiting Belief </a></li>
+<li class="toc-entry toc-h2"><a href="#Waiting-To-Get-Started">Waiting To Get Started </a></li>
+<li class="toc-entry toc-h2"><a href="#Awaiting-Perfect-Conditions">Awaiting Perfect Conditions </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Struggling-or-Tried-and-Failed">Struggling or Tried and Failed </a></li>
+<li class="toc-entry toc-h3"><a href="#What-is-your-self-limiting-belief?">What is your self-limiting belief? </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#What-If-I-Am-Not-Good-At-Mathematics">What If I Am Not Good At Mathematics </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Get-Started-and-Learn-by-Doing">Get Started and Learn by Doing </a></li>
+<li class="toc-entry toc-h3"><a href="#The-Danger-Zone">The Danger Zone </a></li>
+<li class="toc-entry toc-h3"><a href="#The-Technician">The Technician </a></li>
+<li class="toc-entry toc-h3"><a href="#Mathematics-is-Critical,-Later">Mathematics is Critical, Later </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Why-Machine-Learning-Does-Not-Have-to-Be-So-Hard?">Why Machine Learning Does Not Have to Be So Hard? </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Bottom-Up-Learning">Bottom-Up Learning </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#Learning-to-Drive">Learning to Drive </a></li>
+<li class="toc-entry toc-h4"><a href="#Learning-to-Code">Learning to Code </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h3"><a href="#Top-Down-Learning">Top-Down Learning </a></li>
+<li class="toc-entry toc-h3"><a href="#Learning-Machine-Learning">Learning Machine Learning </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#How-to-Think-About-Machine-Learning">How to Think About Machine Learning </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#What-is-Machine-Learning?">What is Machine Learning? </a></li>
+<li class="toc-entry toc-h3"><a href="#What-About-Statistics?">What About Statistics? </a></li>
+<li class="toc-entry toc-h3"><a href="#Your-Machine-Learning">Your Machine Learning </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Applied-Machine-Learning-Process">Applied Machine Learning Process </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#The-skeleton-of-the-process-for-working-a-machine-learning-problem">The skeleton of the process for working a machine learning problem </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#5-step-process">5-step process </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-06-08-ML-comments.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>(Ref: <a href="https://machinelearningmastery.com">https://machinelearningmastery.com</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine learning is broken down into a 5-step process:</p>
+
+<pre><code>Step 1: Adjust Mindset. Believe you can practice and apply machine learning.
+    What is Holding you Back From Your Machine Learning Goals?
+    Why Machine Learning Does Not Have to Be So Hard
+    How to Think About Machine Learning
+    Find Your Machine Learning Tribe
+
+Step 2: Pick a Process. Use a systemic process to work through problems.
+    Applied Machine Learning Process
+
+Step 3: Pick a Tool. Select a tool for your level and map it onto your process.
+    Beginners: Weka Workbench.
+    Intermediate: Python Ecosystem.
+    Advanced: R Platform.
+    Best Programming Language for Machine Learning
+
+Step 4: Practice on Datasets. Select datasets to work on and practice the process.
+    Practice Machine Learning with Small In-Memory Datasets
+    Tour of Real-World Machine Learning Problems
+    Work on Machine Learning Problems That Matter To You
+
+Step 5: Build a Portfolio. Gather results and demonstrate your skills.
+    Build a Machine Learning Portfolio
+    Get Paid To Apply Machine Learning
+    Machine Learning For Money</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-Is-Holding-You-Back-From-Your-Machine-Learning-Goals?">
+<a class="anchor" href="#What-Is-Holding-You-Back-From-Your-Machine-Learning-Goals?" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What Is Holding You Back From Your Machine Learning Goals?</strong><a class="anchor-link" href="#What-Is-Holding-You-Back-From-Your-Machine-Learning-Goals?"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The first question I ask them is what is stopping them from getting started?</p>
+<p>In this post, I want to touch on some self-limiting beliefs I see crop up in my email exchanges and discussions with coaching students.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Self-Limiting-Belief">
+<a class="anchor" href="#Self-Limiting-Belief" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Self-Limiting Belief</em><a class="anchor-link" href="#Self-Limiting-Belief"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A self-limiting belief is something that you assume to be true that is limiting your progress. You presuppose something about yourself or about the thing you want to achieve. The problem is you hold that belief to be true and you don’t question it.</p>
+<p>3 types of self-limiting</p>
+<ul>
+<li>
+<strong>If-then Beliefs:</strong> e.g. If I get started in machine learning, I will fail because I am not good enough.</li>
+<li>
+<strong>Universal Beliefs:</strong> e.g. All Data Scientists have a Ph.D. and are mathematics rock gods.</li>
+<li>
+<strong>Personal and Self-Esteem Beliefs:</strong> e.g. I’m not good enough to be a machine learner.</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Waiting-To-Get-Started">
+<a class="anchor" href="#Waiting-To-Get-Started" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Waiting To Get Started</em><a class="anchor-link" href="#Waiting-To-Get-Started"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I think the biggest class of limiting belief I see is the belief that you cannot get started until you have some specific prior knowledge.</p>
+<p>The problem is that the prior knowledge you think you need is either not required or is so vast in scope that even experts in that subject don’t know it all.</p>
+<p>For example: “I need to KNOW statistics“. See how ambiguous that belief is. How much statistics, what areas of statistics and why do you need to know them before you can start your investigation into machine learning?</p>
+<p>I can’t get into machine learning until…</p>
+
+<pre><code>…I get a degree or higher degree
+…I complete a course
+…I am good at linear algebra
+…I know statistics and probability theory
+…I have mastered the R programming language</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>You can get started in machine learning today, right now. Run your first classifier in 5 minutes. You’re in. Now, start blocking out what it is from machine learning that you really want?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Awaiting-Perfect-Conditions">
+<a class="anchor" href="#Awaiting-Perfect-Conditions" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Awaiting Perfect Conditions</em><a class="anchor-link" href="#Awaiting-Perfect-Conditions"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Another class of <strong>self-limiting belief</strong> is where you are <strong>waiting</strong> for the perfect environment or conditions before taking the leap. Things will never be perfect, leap and make a mess, then leap again.</p>
+<p>I can’t get started in machine learning because…</p>
+
+<pre><code>…I don’t have the time right now
+…I don’t have a fast CPU, GPU or a bazillion MB of RAM
+…I am just a student right now
+…I am not a good programmer at the moment
+…I am very busy at work right now</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>It does take a lot of time and effort to get good at machine learning, but not all at once and not all at the beginning.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can make good progress with <strong>a few hours a week, or tens of minutes per day</strong>. There are plenty of <strong>small snack-sized tasks</strong> you could take on to get started in machine learning.</p>
+<p>You can get started, <strong>it is just going to take some sacrifice</strong>, like all good things in life.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Struggling-or-Tried-and-Failed">
+<a class="anchor" href="#Struggling-or-Tried-and-Failed" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Struggling or Tried and Failed</em><a class="anchor-link" href="#Struggling-or-Tried-and-Failed"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine learning is hard but no harder than other technical skills like programming. 
+<strong>It takes persistence and dedication.</strong> It’s applied and empirical and demands trial and error.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I can’t get into machine learning because…</p>
+
+<pre><code>…I feel overwhelmed
+…I don’t understand x
+…I will never be as good as y
+…I don’t know what to do next
+…I can’t get my program to work
+
+</code></pre>
+<p><strong>My advice is to cut scope or change direction.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-your-self-limiting-belief?">
+<a class="anchor" href="#What-is-your-self-limiting-belief?" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>What is your self-limiting belief?</em><a class="anchor-link" href="#What-is-your-self-limiting-belief?"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Do you have a self-limiting belief? Think about it. What are your goals and why do you think you are not there yet?</p>
+<p>Do you have a goal to get into machine learning, to become a data scientist or a machine learning engineer but have not taken the first step?</p>
+
+<pre><code>Are you waiting to acquire some perfect set of skills before getting started?
+Are you waiting for the perfect conditions before getting started?
+Have you taken a first step and abandoned the trail?
+Where do you want to be and what are you struggling with?</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="What-If-I-Am-Not-Good-At-Mathematics">
+<a class="anchor" href="#What-If-I-Am-Not-Good-At-Mathematics" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What If I Am Not Good At Mathematics</strong><a class="anchor-link" href="#What-If-I-Am-Not-Good-At-Mathematics"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Problen: The think that mathematicians are smarter than they are and that they cannot excel in a subject until they “know the math”.</p>
+<p>I have seen this first hand, and I have seen it stop people from getting started.</p>
+<p><strong>In this post, I want to convince you that you can get started and make great progress in machine learning without being strong in mathematics.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Get-Started-and-Learn-by-Doing">
+<a class="anchor" href="#Get-Started-and-Learn-by-Doing" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Get Started and Learn by Doing</em><a class="anchor-link" href="#Get-Started-and-Learn-by-Doing"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I didn’t learn boolean logic before I started programming.</p>
+<p>I followed an empirical path that involved <strong>trial and error</strong>. It is slow and I wrote a lot of bad code, <strong>but</strong> I was passionately interested and I could see progress.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>I hunted for conceptual and practical tools I could use to overcome the limitations <strong>I was actually experiencing. This was a powerful learning tool.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Danger-Zone">
+<a class="anchor" href="#The-Danger-Zone" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>The Danger Zone</em><a class="anchor-link" href="#The-Danger-Zone"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>I like it when my programs don’t work.</strong> It means I have to roll up my sleeves and really understand what is going on.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can get a long way by copy and pasting code without really understanding it. <strong>You only need to understand blocks of code as functional units that do a thing you need done.</strong> Glue enough of them together and you have a program that solves the problem you need solved.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This <strong>empirical hackery</strong> is a great way to learn fast, but <strong>a terrifying way</strong> to build production systems.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is an important distinction to make. The often spoken of <strong>“danger zone”</strong> is when systems built from empirical learning are made operational and the author does not really know how it works or what the results actually mean.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-Technician">
+<a class="anchor" href="#The-Technician" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>The Technician</em><a class="anchor-link" href="#The-Technician"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can get started in machine learning today, <strong>empirically</strong>. Three options available to you are:</p>
+<ol>
+<li>Learn to drive a tool like scikit-learn.</li>
+<li>Use libraries that provide algorithms and write little programs</li>
+<li>Implement algorithms yourself from tutorials and books.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This can be the path of the technician <strong>from beginner to intermediate</strong> that is learning the mathematics required for a technique, just-in-time.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Define <strong>small problems</strong>, solve them methodically and present the results of what you have learned on your blog.</p>
+<p>There will be interesting algorithms that you will want to know more about, such as <strong>what a particular parameter actually does when you change it or how to get better results from a particular algorithm.</strong></p>
+<p>This will drive you to want (need) to understand <strong>how that technique really works and what it is doing.</strong></p>
+<p>You can remain the empiricist. I call this the path of the technician.</p>
+<p>You can <strong>build up an empirical intuition of which methods</strong> to use and how to use them. You can also learn just enough algebra to be able to read algorithm descriptions and turn them into code.</p>
+<p>There is a path here for the <strong>skilled technician</strong> to create tools, plug-in’s and even operational systems that use machine learning.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>technician is contrasted to the theoretician</strong> at the other end of the scale. The theoretician can:</p>
+
+<pre><code>1. Internalize existing methods.
+2. Propose extensions to existing methods.
+3. Devise entirely new methods.
+
+</code></pre>
+<p>The <strong>theoretician</strong> may be able to demonstrate the capability of a method in the abstract, but is likely <strong>insufficiently skilled to turn the methods into code</strong> beyond prototype demonstration systems at best.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>You can learn as little or as much mathematics as you like, just in time. Focus on your strengths and be honest about your limitations.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mathematics-is-Critical,-Later">
+<a class="anchor" href="#Mathematics-is-Critical,-Later" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Mathematics is Critical, Later</em><a class="anchor-link" href="#Mathematics-is-Critical,-Later"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>If you have to learn linear algebra <strong>just-in-time</strong>, why not learn it fully more completely up front and understand the machine learning methods at this deep level from the beginning?</p>
+<p><strong>This is certainly an option</strong>, perhaps the most efficient option which is why it is the path used to teach in university. It’s just not the only option available to you.</p>
+<p>Just like learning to program by starting with logic and abstract concepts, internalizing machine learning theory may <strong>not be the most efficient way for you to get started.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>You learned that the technician can learn the mathematical representations and descriptions of machine learning algorithms just-in-time. You also learned that the danger zone for the technician is overconfidence and the risk of putting systems into production that are poorly understood.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Why-Machine-Learning-Does-Not-Have-to-Be-So-Hard?">
+<a class="anchor" href="#Why-Machine-Learning-Does-Not-Have-to-Be-So-Hard?" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Why Machine Learning Does Not Have to Be So Hard?</strong><a class="anchor-link" href="#Why-Machine-Learning-Does-Not-Have-to-Be-So-Hard?"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Useful skills we use every day like reading, driving, and programming were not learned this way and were in fact learned using an inverted top-down approach.</p>
+<p><strong>This top-down approach can be used to learn technical subjects directly such as machine learning, which can make you a lot more productive a lot sooner, and be a lot of fun.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In contrast, technical topics like mathematics, physics, and even computer science are taught using a <strong>bottom-up approach</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You will know:</p>
+
+<pre><code>- The bottom-up approach used in universities to teach technical subjects and the problems with it.
+- How people learn to read, drive, and program in a top-down manner and how the top-down approach works.
+- The frame of machine learning and even mathematics using the top-down approach to learning and how to start to make rapid progress as a practitioner.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This is an <strong>important blog post</strong>, because I think it can really help to shake you out of the bottom-up, university-style way of learning machine learning.</p>
+<p>This post is divided into seven parts; they are:</p>
+
+<pre><code>1. Bottom-Up Learning
+2. Learning to Read
+3. Learning to Drive
+4. Learning to Code
+5. Top-Down Learning
+6. Learn Machine Learning
+7. Learning Mathematics</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Bottom-Up-Learning">
+<a class="anchor" href="#Bottom-Up-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Bottom-Up Learning</em><a class="anchor-link" href="#Bottom-Up-Learning"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Think back to <strong>high-school or undergraduate studies</strong> and the fundamental fields you may have worked through: examples such as: Mathematics, as mentioned, Biology, Chemistry etc.</p>
+<p>Think about how the material was laid out, <strong>week-by-week, semester-by-semester, year-by-year. Bottom-up, logical progression.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>The problem is, the logical progression through the material may not be the best way to learn the material in order to be productive.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>We are not robots executing a learning program. We are emotional humans that need motivation, interest, attention, encouragement, and results.</p>
+<p>If you have completed <strong>a technical subject</strong>, think back to how to you actually learned it. <strong>I bet it was not bottom-up.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Learning-to-Drive">
+<a class="anchor" href="#Learning-to-Drive" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Learning to Drive</em><a class="anchor-link" href="#Learning-to-Drive"> </a>
+</h4>
+<p>I remember hiring a driving instructor and doing driving lessons. Every single lesson was practical, in the car, practicing the skill I was required to master, driving the vehicle in traffic.</p>
+<p>Here’s what I did not study or discuss with my driving instructor:</p>
+
+<pre><code>The history of the automobile.
+The theory of combustion engines.
+The common mechanical faults in cars.
+The electrical system of the car.
+The theory of traffic flows.
+
+</code></pre>
+<p>In fact, I never expect to learn these topics. I have zero need or interest and they will not help me realize the thing I want and need, which is safe and easy personal mobility.</p>
+<p>If the car breaks, I’ll call an expert.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Learning-to-Code">
+<a class="anchor" href="#Learning-to-Code" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Learning to Code</em><a class="anchor-link" href="#Learning-to-Code"> </a>
+</h4>
+<p>I started programming without any idea of what coding or software engineering meant.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Top-Down-Learning">
+<a class="anchor" href="#Top-Down-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Top-Down Learning</em><a class="anchor-link" href="#Top-Down-Learning"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The <strong>bottom-up</strong> approach is not just a common way for teaching technical topics; it looks like the only way.</p>
+<p>The designers of university courses, masters of their subject area, are trying to help. They are laying everything out to give you the logical progression through the material that they think will get you to the skills and capabilities that you require (hopefully).</p>
+<p>And as I mentioned, it can work for some people.</p>
+<p><strong>It does not work for me, and I expect it does not work for you.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Don’t start with definitions and theory. Instead, start by connecting the subject with the results you want and show how to get results immediately.</strong></p>
+<p>Lay out a program that focuses on practicing this process of getting results, <strong>going deeper into some areas as needed</strong>, but always in the context of the result they require.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>Be careful not to use traditional ways of thinking or comparison if you take this path.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>It is iterative:       Topics are revisited many times with deeper understanding.
+It is imperfect:       Results may be poor in the beginning, but improve with practice.
+It requires discovery: The learner must be open to continual learning and discoverery.
+It requires ownership: The learner is responsible for improvement.
+It requires curiosity: The learner must pay attention to what interests them and follow it.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Learning-Machine-Learning">
+<a class="anchor" href="#Learning-Machine-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a><em>Learning Machine Learning</em><a class="anchor-link" href="#Learning-Machine-Learning"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Are you following a top-down type approach but are riddled with guilt, math envy, and insecurities?</p>
+<p>You are not alone; I see this every single day in helping beginners on this website.</p>
+<p>To connect the dots for you, <strong>I strongly encourage you to study machine learning using the top-down approach.</strong></p>
+
+<pre><code>Don’t start with precursor math.
+Don’t start with machine learning theory.
+Don’t code every algorithm from scratch.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>1- Start by learning how to work through very simple predictive modeling problems using a fixed framework with free and easy-to-use open source tools.</strong></p>
+<p><strong>2- Practice on many small projects and slowly increase their complexity.</strong></p>
+<p><strong>3- Show your work by building a public portfolio.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>You can learn machine learning by practicing predictive modeling, not by studying math and theory.</strong></p>
+<p>Not only is this the way I learned and continue to practice machine learning, but it has helped tens of thousands of my students (and the many millions of readers of this blog).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>A top-down approach might be to:</strong></p>
+
+<pre><code>- Implement the method in a high-level library such as scikit-learn and get a result.
+- Implement the method in a lower-level library such as NumPy/SciPy and reproduce the result.
+- Implement the method directly using matrices and matrix operations in NumPy or Octave.
+- Study and explore the matrix arithmetic operations involved.
+- Study and explore the matrix decomposition operations involved.
+- Study methods for approximating the eigendecomposition of a matrix.
+And so on…</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The goal provides the context and you can let your curiosity define the depth of study.</p>
+<p>Painted this way, studying math is no different to studying any other topic in programming, machine learning, or other technical subjects.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>- The bottom-up approach used in universities to teach technical subjects and the problems with it.
+- How people learn to read, drive, and program in a top-down manner and how the top-down approach works.
+- The frame of machine learning and even mathematics using the top-down approach to learning and how to start to make rapid progress as a practitioner.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="How-to-Think-About-Machine-Learning">
+<a class="anchor" href="#How-to-Think-About-Machine-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>How to Think About Machine Learning</strong><a class="anchor-link" href="#How-to-Think-About-Machine-Learning"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You can achieve impressive results with machine learning and find solutions to very challenging problems.</p>
+<p>But this is <strong>only a small</strong> corner of the broader field of machine learning often <strong>called predictive modeling or predictive analytics</strong>.</p>
+<p>In this post, you will discover <em>how to change the way you think about machine learning in order to best serve you as a machine learning practitioner.</em></p>
+
+<pre><code>- What machine learning is and how it relates to artificial intelligence and statistics.
+- The corner of machine learning that you should focus on.
+- How to think about your problem and the machine learning solution to your problem.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Machine learning is a large field of study, and not all much of it is going to be relevant to you if you’re focused on solving a problem.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-is-Machine-Learning?">
+<a class="anchor" href="#What-is-Machine-Learning?" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What is Machine Learning?</strong><a class="anchor-link" href="#What-is-Machine-Learning?"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine learning is a field of computer science concerned with programs that learn.</p>
+<p>There are many types of learning, many types of feedback to learn from, and many things that can be learned.</p>
+<p>This could encompass diverse types of learning, such as:</p>
+
+<pre><code>- Developing code to investigate how populations of organisms “learn” to adapt to their environment over evolutionary time.
+- Developing code to investigate how one neuron in the brain “learns” in response to stimulus from other neurons.
+- Developing code to investigate how ants “learn” the optimal path from their home to their food source.
+</code></pre>
+<p>Another case that you may be more familiar with is:</p>
+
+<pre><code>- Developing code to investigate how to “learn” patterns in historical data.
+
+</code></pre>
+<p>This is less glamorous, but is the basis of the small corner of machine learning in which we as practitioners are deeply interested.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="What-About-Statistics?">
+<a class="anchor" href="#What-About-Statistics?" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>What About Statistics?</strong><a class="anchor-link" href="#What-About-Statistics?"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Statistics, or applied statistics with computers, is a sub-field of mathematics that is concerned with <strong>describing and understanding the relationships in data</strong>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This could encompass diverse types of learning such as:</p>
+
+<pre><code>- Developing models to summarize the distribution of a variable.
+- Developing models to best characterize the relationship between two variables.
+- Developing models to test the similarity between two populations of observations.
+
+</code></pre>
+<p><strong>It also overlaps with the corner of machine learning interested in learning patterns in data.</strong></p>
+<p>Many methods used for understanding data in statistics can be used in machine learning to <strong>learn patterns in data</strong>. These tasks could be called machine learning or applied statistics.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Your-Machine-Learning">
+<a class="anchor" href="#Your-Machine-Learning" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Your Machine Learning</strong><a class="anchor-link" href="#Your-Machine-Learning"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Machine learning is a large field of study, and it can help you solve specific problems.</p>
+<p><strong>But you don’t need to know about all of it.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In fact, when it comes to learning relationships in data:</p>
+
+<pre><code>- You’re not investigating the capabilities of an algorithm.
+- You’re not developing an entirely new theory or algorithm.
+- You’re not extending an existing machine learning algorithm to new cases.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>So what parts of machine learning do you need to focus on?</strong></p>
+<p>I think there are two ways to think about machine learning:</p>
+
+<pre><code>- In terms of the problem you are trying to solve.
+- In terms of the solution you require.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Your Machine Learning Problem</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Your problem can best be described as the following:</p>
+
+<pre><code>Find a model or procedure that makes best use of historical data comprised of inputs and outputs in order to skillfully predict outputs given new and unseen inputs in the future.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Based on this description:</p>
+
+<pre><code>It discards entire sub-fields of machine learning, such as unsupervised learning, to focus on one type of learning called supervised learning</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Your Machine Learning Solution</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The solution you require is best described as the following:</p>
+
+<pre><code>A model or procedure that automatically creates the most likely approximation of the unknown underlying relationship between inputs and associated outputs in historical data.</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In fact, problems of this type resist top-down hand-coded solutions. If you could sit down and write some if-statements to solve your problem, you would not need a machine learning solution. It would be a programming problem.</p>
+<p><strong><em>The type of machine learning methods that you need will learn the relationship between the inputs and outputs in your historical data.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Applied-Machine-Learning-Process">
+<a class="anchor" href="#Applied-Machine-Learning-Process" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Applied Machine Learning Process</strong><a class="anchor-link" href="#Applied-Machine-Learning-Process"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Over time, working on applied machine learning problems <strong><em>you develop a pattern or process for quickly getting to good robust results.</em></strong></p>
+<p>Once developed, <strong><em>you can use this process again and again on project after project. The more robust and developed your process, the faster you can get to reliable results.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="The-skeleton-of-the-process-for-working-a-machine-learning-problem">
+<a class="anchor" href="#The-skeleton-of-the-process-for-working-a-machine-learning-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>The skeleton of the process for working a machine learning problem</strong><a class="anchor-link" href="#The-skeleton-of-the-process-for-working-a-machine-learning-problem"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This  can be as a <strong>starting point or template</strong> on your next project</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="5-step-process">
+<a class="anchor" href="#5-step-process" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>5-step process</strong><a class="anchor-link" href="#5-step-process"> </a>
+</h4>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>1. Define the Problem
+2. Prepare Data
+3. Spot Check Algorithms
+4. Improve Results
+5. Present Results</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There is a lot of <strong>flexibility in this process</strong>.</p>
+<p>For example, the “prepare data” step is typically broken down into analyze data (summarize and graph) and prepare data (prepare samples for experiments).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It’s <strong>a great big production line</strong> that I try to move through <strong>in a linear manner.</strong></p>
+<p>The great thing in <strong>using automated tools</strong> is that you <strong>can go back a few steps</strong> (say from “Improve Results” back to “Prepare Data”) and insert a new transform of the dataset and <strong>re-run experiments</strong> in the intervening steps <strong><em>to see what interesting results come out and how they compare to the experiments you executed before.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>NOTE:</em></strong> The process I use has been adapted from the standard data mining process of knowledge discovery in databases (or KDD).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="NILICK/hmbnn-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/hmbnn-blog/machine%20learning/python/course/2021/06/08/ML-comments.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hmbnn-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hmbnn-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hmbnn-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A blog for learn about python programming in enviornmetal sciences modeling!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

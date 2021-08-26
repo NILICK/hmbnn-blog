@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to write a scientific paper? | EnviSci-Py</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="How to write a scientific paper?" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is about writing a scientific paper." />
+<meta property="og:description" content="This post is about writing a scientific paper." />
+<link rel="canonical" href="nilick.github.io/hmbnn-blog/writing/paper/2021/07/06/Paper-Writing.html" />
+<meta property="og:url" content="nilick.github.io/hmbnn-blog/writing/paper/2021/07/06/Paper-Writing.html" />
+<meta property="og:site_name" content="EnviSci-Py" />
+<meta property="og:image" content="nilick.github.io/hmbnn-blog/images/wrting.jpg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-07-06T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This post is about writing a scientific paper.","url":"nilick.github.io/hmbnn-blog/writing/paper/2021/07/06/Paper-Writing.html","@type":"BlogPosting","headline":"How to write a scientific paper?","dateModified":"2021-07-06T00:00:00-05:00","datePublished":"2021-07-06T00:00:00-05:00","image":"nilick.github.io/hmbnn-blog/images/wrting.jpg","mainEntityOfPage":{"@type":"WebPage","@id":"nilick.github.io/hmbnn-blog/writing/paper/2021/07/06/Paper-Writing.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hmbnn-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="nilick.github.io/hmbnn-blog/feed.xml" title="EnviSci-Py" /><link rel="shortcut icon" type="image/x-icon" href="/hmbnn-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hmbnn-blog/">EnviSci-Py</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hmbnn-blog/about/">About Me</a><a class="page-link" href="/hmbnn-blog/search/">Search</a><a class="page-link" href="/hmbnn-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to write a scientific paper?</h1><p class="page-description">This post is about writing a scientific paper.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-07-06T00:00:00-05:00" itemprop="datePublished">
+        Jul 6, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#writing">writing</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#paper">paper</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h1"><a href="#Academic-Writing-from-Paragraph-to-Essay">Academic Writing from Paragraph to Essay </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Introduction:-Process-Writing">Introduction: Process Writing </a></li>
+<li class="toc-entry toc-h2"><a href="#Pre-Writing:-Getting-Ready-to-Write">Pre-Writing: Getting Ready to Write </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-07-06-Paper-Writing.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Academic-Writing-from-Paragraph-to-Essay">
+<a class="anchor" href="#Academic-Writing-from-Paragraph-to-Essay" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Academic Writing from Paragraph to Essay</strong><a class="anchor-link" href="#Academic-Writing-from-Paragraph-to-Essay"> </a>
+</h1>
+<p><em>by Doeothy E Zematch &amp; Lisa A Rumisek</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This book is a combination text and workbook.</p>
+<p>The course combines a process approach to writing with a pragmatic approach to teaching the basics of writing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/hmbnn-blog/images/copied_from_nb/../images/diag1.png" alt="">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The introduction presents process writing.</p>
+<p>First work is recognising and identifying key writing structure from modal paragraphs and essays.</p>
+<p>The manipulation of structures in short, manageable tasks should be done next.</p>
+<p>Finally, it could be applied to own writing.</p>
+<p>Critical thinking is emphasized, because it causes aware of the impact of choice of words, sentences, and organisational techniques on the effectiveness of writing.</p>
+<p>The focus throughout on academic writing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Unit 1-6:</strong> Analysing and writing the types of paragraphs that commonly occur on academic contexts.</p>
+<p><strong>Unit 7:</strong> Writing two-paragraph texts, in preparation for longer assignments.</p>
+<p><strong>Unit 8-11:</strong> Applying what learned about paragraphs to essay writing.</p>
+<p><strong>unit 12:</strong> Discussing strategies for timed essay writing, including understanding instructions, time-management techniques, and methods for organising information.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Academic writing in English may be different not only from academic writing in your own language, but even from other writing in English.</p>
+<p><strong><em>Me will learn how important the reader is to the writer, and how to express clearly and directly what I meant to communicate.</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Introduction:-Process-Writing">
+<a class="anchor" href="#Introduction:-Process-Writing" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Introduction: Process Writing</strong><a class="anchor-link" href="#Introduction:-Process-Writing"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Words for understanding the writer process:</p>
+<p><strong>Step:</strong> one thing in a series of things you do</p>
+<p><strong>Topic:</strong> subject; what the piece of writing is about</p>
+<p><strong>Gather:</strong> to find and collect together</p>
+<p><strong>Organise:</strong> to arrange in a clear, logical way</p>
+<p><strong>Paragraph:</strong> a group of related sentences</p>
+<p><strong>Essay:</strong> a short piece of writing, at least three paragraphs long</p>
+<p><strong>Proofread:</strong> to check a piece of writing for errors</p>
+<p><strong>Edit:</strong> to change or correct a piece or writing</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong><em>The six steps of the writing process</em></strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>When we write we do more than just put words together to make sentences</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/hmbnn-blog/images/copied_from_nb/../images/diag2.png" alt="">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>1- Pre-writing has three steps:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><figure>
+  
+    <img class="docimage" src="/hmbnn-blog/images/copied_from_nb/../images/diag3.png" alt="">
+    
+    
+</figure>
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>2- Drafting has one step includes:</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Step four (Write):</strong> Write your paragraph or essay from start to finish.</p>
+<p>Use your notes about your ideas and organisation.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>3- Reviewing and revising has one step includes:</strong></p>
+<p><strong>Step five(Review structure and content):</strong> Check what you have written.</p>
+<p>Read your writing silently to yourself or aloud.</p>
+<p>Look for places where you can add more information, and check to see if you have any unnecessary information.</p>
+<p>Getting a reader's opinion is a good way to know if your writing is clear and effective.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>4- Rewriting has one step includes:</strong></p>
+<p><strong>Step six(Revise structure and content):</strong> Use your ideas from step five to rewrite your text, making improvements to structure and content.</p>
+<p>You might need to explain something more clearly, or add more details.</p>
+<p>You may even need to change your organisation so that your text is more logical.</p>
+<p><em>Together, step 5 and 6 can be called editing.</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Proofread:</strong> Read your text again and check your spelling and grammar and think about the words you have chosen to use.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Make final correction:</strong> Check that you have corrected the errors you discovered in steps 5 and 6 and make other changes you want to make.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Pre-Writing:-Getting-Ready-to-Write">
+<a class="anchor" href="#Pre-Writing:-Getting-Ready-to-Write" aria-hidden="true"><span class="octicon octicon-link"></span></a><strong>Pre-Writing: Getting Ready to Write</strong><a class="anchor-link" href="#Pre-Writing:-Getting-Ready-to-Write"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>How to:</p>
+
+<pre><code>    - choose and narrow a topic
+    - gather ideas
+    - edit ideas</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>What is pre-writing?</strong></p>
+<p>Before you begin writing, you decide what you are going to write about.</p>
+<p>Then you plan what you are going to write.</p>
+<p>This process is called pre-writing.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>How to choose a topic for a paragraph?</strong></p>
+<p>A <strong><em>paragraph</em></strong> is a group of <strong><em>five to ten sentences</em></strong> that give information about a topic.</p>
+<p><strong>Choose a topic that isn't:</strong></p>
+
+<pre><code>- too narrow (limited, brief).
+- too broad (general).</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A <strong><em>narrow topic</em></strong> will not have enough ideas to write about.(For example ages of my parents)</p>
+<p>A <strong><em>broad topic</em></strong> will have too many ideas for just one paragraph. Most paragraphs are <strong><em>five to ten sentences long</em></strong>. (For example schools)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>What is brainstorming?</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Brainstorming is <strong>_a way of gathering ideas</strong> about a topic.</p>
+<p>In brainstorming thousands of ideas 'raining' down onto your paper!</p>
+<p>When you brainstorm, <strong><em>write down every idea</em></strong> that comes to you.</p>
+<p><strong><em>Don't worry</em></strong> now about whether the ideas are good or silly, useful or not.</p>
+<p>You can <strong><em>decide that later</em></strong>. Right <strong><em>now</em></strong>, you are gathering as many ideas as you can.</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="NILICK/hmbnn-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/hmbnn-blog/writing/paper/2021/07/06/Paper-Writing.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hmbnn-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hmbnn-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hmbnn-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A blog for learn about python programming in enviornmetal sciences modeling!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

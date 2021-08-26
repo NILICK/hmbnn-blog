@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>How to create own your blog? (My Notes) | EnviSci-Py</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="How to create own your blog? (My Notes)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is about create own your blog with free resources in Github." />
+<meta property="og:description" content="This post is about create own your blog with free resources in Github." />
+<link rel="canonical" href="nilick.github.io/hmbnn-blog/blog/fastpages/github/2021/08/25/_create_blog.html" />
+<meta property="og:url" content="nilick.github.io/hmbnn-blog/blog/fastpages/github/2021/08/25/_create_blog.html" />
+<meta property="og:site_name" content="EnviSci-Py" />
+<meta property="og:image" content="nilick.github.io/hmbnn-blog/images/logo.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-08-25T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This post is about create own your blog with free resources in Github.","url":"nilick.github.io/hmbnn-blog/blog/fastpages/github/2021/08/25/_create_blog.html","@type":"BlogPosting","headline":"How to create own your blog? (My Notes)","dateModified":"2021-08-25T00:00:00-05:00","datePublished":"2021-08-25T00:00:00-05:00","image":"nilick.github.io/hmbnn-blog/images/logo.png","mainEntityOfPage":{"@type":"WebPage","@id":"nilick.github.io/hmbnn-blog/blog/fastpages/github/2021/08/25/_create_blog.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hmbnn-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="nilick.github.io/hmbnn-blog/feed.xml" title="EnviSci-Py" /><link rel="shortcut icon" type="image/x-icon" href="/hmbnn-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hmbnn-blog/">EnviSci-Py</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hmbnn-blog/about/">About Me</a><a class="page-link" href="/hmbnn-blog/search/">Search</a><a class="page-link" href="/hmbnn-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">How to create own your blog? (My Notes)</h1><p class="page-description">This post is about create own your blog with free resources in Github.</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-08-25T00:00:00-05:00" itemprop="datePublished">
+        Aug 25, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      3 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#blog">blog</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#fastpages">fastpages</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#github">github</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-03-01_create_blog.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Building-a-blog-with-Fastpages">Building a blog with Fastpages<a class="anchor-link" href="#Building-a-blog-with-Fastpages"> </a></h1><ol>
+<li>For create and check blog posts in <em>localhost</em>, it needs dicker-compose.
+For install it in Ubuntu first in base environment (src=<a href="https://docs.docker.com/compose/install/">https://docs.docker.com/compose/install/</a>):</li>
+</ol>
+
+<pre><code>sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose</code></pre>
+<ol>
+<li>Next for permissions:
+<pre><code>sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+</li>
+<li>Now create a repository in <em>github</em> for build <em>fastpages</em> blog:</li>
+</ol>
+<ul>
+<li><a href="https://github.com/fastai/fastpages/generate">https://github.com/fastai/fastpages/generate</a></li>
+</ul>
+<ol>
+<li>rep name = hmblog</li>
+<li>create repository from template</li>
+<li>in new rep created after a few moments, click on <em>Pull requests</em> and then <em>initial Setup</em></li>
+<li>create an ssh key-pair from:<a href="https://8gwifi.org/sshfunctions.jsp">https://8gwifi.org/sshfunctions.jsp</a></li>
+<li>with <em>RSA</em> and <em>4096</em> options Generate-SSH-Keys</li>
+<li>copy all text in <em>Private Key</em> and pate it in Action <em>Secret</em> of own rep with name of <em>SSH_DEPLOY_KEY</em></li>
+<li>copy all text in <em>Public Key</em> and paste it in <em>Deploy keys</em> and check <em>Allow write access</em> with name of <em>blog-key</em>.</li>
+<li>go back to <em>Initial Setup</em> page and in pagedown click on the <em>Merge pull request</em> and then <em>Confirm request</em>.</li>
+<li>after a few moments in <em>code</em> page click on url="<a href="https://xxx.github.io/hbnn/">https://xxx.github.io/hbnn/</a>" and see the preliminary blog.</li>
+<li><em>_config.yml</em> is for change some metadata such as title, date, category,...</li>
+<li>for edit this file open it and change desired texts then commit changes.</li>
+</ol>
+<hr />
+<p>BECAUSE THERE ARE SOME PROBLEMS IN WORK WITH DOCKER IN LOCALHOST IT IS BETTER DONE ANY CHANGES IN GITHUB WEBSITE!</p>
+<ol>
+<li>because of fast blogging it is best choice to run in localhost and then upload completed blog posts.</li>
+<li>for do it first install "docker engine" and "docker-compose"</li>
+<li><p>for install docker:
+```</p>
+
+<pre><code># DOCKER ENGINE
+sudo apt-get remove docker docker-engine docker.io containerd runc
+sudo apt-get update
+sudo apt-get install \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo \
+"deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+
+# FOR VERIFY INSTALLED DOCKER ENGINE
+sudo docker run hello-world
+
+# DOCKER-COMPOSE
+sudo curl -L "https://github.com/docker/compose/releases/download/1.28.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose</code></pre>
+</li>
+</ol>
+<p>```</p>
+<ol>
+<li>for do it, we need docker and first created repository must be downloaded in local drive.</li>
+<li>after download and unzip the repository, open terminal in root of local repository.</li>
+<li>sudo make build # (this is for fist time only)</li>
+<li>sudo make server</li>
+<li>open blog created locally with rep name: <a href="http://0.0.0.0:4000/hbnn/">http://0.0.0.0:4000/hbnn/</a></li>
+<li>for stop server "ctrl + c"</li>
+<li><p>EDIT "_config.yml" for show an image side of post title:</p>
+
+<pre><code>show_image: true</code></pre>
+</li>
+<li><p>Save "_config.yml" and 
+sudo make server</p>
+</li>
+</ol>
+<p>(for more reading: <a href="https://docs.docker.com/config/pruning/">https://docs.docker.com/config/pruning/</a> &amp; <a href="https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes">https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-containers-and-volumes</a>)</p>
+<ol>
+<li><p>for cleanup all images, containers and volumes locally use:
+<em>list of all images</em>
+sudo docker images -a
+<em>list of container</em>
+sudo docker container ls
+<em>list of volumes</em>
+sudo docker volume ls</p>
+<p><em>Delete anything</em>
+docker system prune
+docker system prune --volumes
+docker image prune -a</p>
+</li>
+</ol>
+<hr />
+<ol>
+<li>for add new jupyter notebook as a new post in blog just add your notebook.ipynb file in _notebook folder.</li>
+<li>for deploy various posts with different plots I created some notebooks for show them.</li>
+<li>for remove "Subscribe" in footer page based on:
+<a href="https://github.com/jekyll/minima/issues/553#issuecomment-725082582">https://github.com/jekyll/minima/issues/553#issuecomment-725082582</a>, first add a file name footer.html in _include folder with up link code then run server again to emit rss feed in footer.</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Github-Desktop-Step-by-Step">Github Desktop Step by Step<a class="anchor-link" href="#Github-Desktop-Step-by-Step"> </a></h1><ol>
+<li>Download last relased Github Desktop deb format from:
+<a href="https://github.com/shiftkey/desktop/releases">https://github.com/shiftkey/desktop/releases</a></li>
+<li>Open terminal and run update commandas:
+sudo apt update &amp;&amp; sudo apt install -f</li>
+<li>Install Github Desktop package:
+sudo dpkg -i fileName.deb</li>
+<li>After install open package in terminal with:
+Github desktop</li>
+<li>Getting started with Github Desktop:
+Open GitHub Desktop. Click ‘Sign in to GitHub.com’ </li>
+<li>Sign in using your GitHub username &amp; password</li>
+<li>Update your user information if necessary</li>
+<li>Click ‘Finish’</li>
+<li>Create new repository OR Clone available repository in github.com to local github desktop directory.</li>
+<li>With add any file(s) or edit any availe files in github repository, it will be show in github desktop in left sidebar changes tab.</li>
+<li>To push the changes in github, you must first type a comment as description in <em>summary (required)</em> in left sidebar and then commit to master.</li>
+<li>After commited changes, now it is time to <em>Push origin</em>.</li>
+<li>Now you can check your github's repository and can see changes.</li>
+</ol>
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="NILICK/hmbnn-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/hmbnn-blog/blog/fastpages/github/2021/08/25/_create_blog.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hmbnn-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hmbnn-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hmbnn-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A blog for learn about python programming in enviornmetal sciences modeling!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

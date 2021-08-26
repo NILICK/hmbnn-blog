@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>LDT Installing in ubuntu | EnviSci-Py</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="LDT Installing in ubuntu" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is about install Land Data Toolkit(LDT) in ubuntu" />
+<meta property="og:description" content="This post is about install Land Data Toolkit(LDT) in ubuntu" />
+<link rel="canonical" href="nilick.github.io/hmbnn-blog/ldt/merra-2/downscale/lis/modeling/2021/06/08/LDT.html" />
+<meta property="og:url" content="nilick.github.io/hmbnn-blog/ldt/merra-2/downscale/lis/modeling/2021/06/08/LDT.html" />
+<meta property="og:site_name" content="EnviSci-Py" />
+<meta property="og:image" content="nilick.github.io/hmbnn-blog/images/lis.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-08T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This post is about install Land Data Toolkit(LDT) in ubuntu","url":"nilick.github.io/hmbnn-blog/ldt/merra-2/downscale/lis/modeling/2021/06/08/LDT.html","@type":"BlogPosting","headline":"LDT Installing in ubuntu","dateModified":"2021-06-08T00:00:00-05:00","datePublished":"2021-06-08T00:00:00-05:00","image":"nilick.github.io/hmbnn-blog/images/lis.jpeg","mainEntityOfPage":{"@type":"WebPage","@id":"nilick.github.io/hmbnn-blog/ldt/merra-2/downscale/lis/modeling/2021/06/08/LDT.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hmbnn-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="nilick.github.io/hmbnn-blog/feed.xml" title="EnviSci-Py" /><link rel="shortcut icon" type="image/x-icon" href="/hmbnn-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hmbnn-blog/">EnviSci-Py</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hmbnn-blog/about/">About Me</a><a class="page-link" href="/hmbnn-blog/search/">Search</a><a class="page-link" href="/hmbnn-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">LDT Installing in ubuntu</h1><p class="page-description">This post is about install Land Data Toolkit(LDT) in ubuntu</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-08T00:00:00-05:00" itemprop="datePublished">
+        Jun 8, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      16 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#LDT">LDT</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#merra-2">merra-2</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#downscale">downscale</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#LIS">LIS</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#modeling">modeling</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Necessary-Packages">Necessary Packages </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-ESMF-final-method">Install ESMF final method </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Very-important-NOTE:">Very important NOTE: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Compile-LDT">Compile LDT </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Notes:">Notes: </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Using-LDT">Using LDT </a></li>
+<li class="toc-entry toc-h2"><a href="#More-about-LDT">More about LDT </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Native-Datasets">Native Datasets </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Land-surface-Data-Toolkit">Land surface Data Toolkit </a></li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-06-08-LDT.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this post, I want to describe how to install LDT in ubuntu step-by-step.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Necessary-Packages">
+<a class="anchor" href="#Necessary-Packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Necessary Packages<a class="anchor-link" href="#Necessary-Packages"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1- First conda deactivate</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>2- check installed packages:</p>
+<blockquote>
+<p>apt list --installed</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>3- Install CMAKE</p>
+<blockquote>
+<p>sudo apt install cmake</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>4- Installing GCC &amp; Fortran on Ubuntu</p>
+<blockquote>
+<p>sudo apt update</p>
+<p>sudo apt install build-essential</p>
+<p>sudo apt-get install manpages-dev</p>
+<p>sudo apt install gcc gfortran</p>
+<p>gcc --version</p>
+<p>gfortran --version</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>5- Check Perl version:</p>
+<blockquote>
+<p>perl -v</p>
+</blockquote>
+<p>for install perl:&gt; sudo apt-get install perl</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>6- Install lapack:</p>
+<blockquote>
+<p>sudo apt-get install liblapack-dev</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>7- How to check if the MPI already installed on my machine?</p>
+<blockquote>
+<p>ompi_info</p>
+</blockquote>
+<p>install:&gt; sudo apt install openmpi-bin</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>8- Install NetCDF and NetCDF-Fortran (src:<a href="https://cloud-gc.readthedocs.io/en/stable/chapter04_developer-guide/install-basic.html">https://cloud-gc.readthedocs.io/en/stable/chapter04_developer-guide/install-basic.html</a>)</p>
+<blockquote>
+<p>sudo apt-get install libnetcdf-dev libnetcdff-dev</p>
+</blockquote>
+<p>Check NetCDF-C configuration:&gt; nc-config --all
+Check NetCDF-Fortran configuration:</p>
+<blockquote>
+<p>nf-config --all</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>9- Install  OpenJPEG:</p>
+<blockquote>
+<p>sudo apt install libopenjp2-7</p>
+<p>sudo apt-get install libopenjp2-7-dev</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>10- Install ecCodes:</p>
+<p>download the latest ecCodes from:</p>
+<p><a href="https://confluence.ecmwf.int/display/ECC/Releases">https://confluence.ecmwf.int/display/ECC/Releases</a></p>
+<p>(src: <a href="https://confluence.ecmwf.int/display/ECC/ecCodes+installation">https://confluence.ecmwf.int/display/ECC/ecCodes+installation</a>)</p>
+<blockquote>
+<p>tar -xzf  eccodes-x.y.z-Source.tar.gz</p>
+<p>mkdir build ; cd build</p>
+<p>cmake -DCMAKE_INSTALL+PREFIX=/home/nilik/MYPROGRAMS/LDT/ecCodes</p>
+<p>../eccodes-2.22.0-Source</p>
+<p>...</p>
+<p>make</p>
+<p>ctest</p>
+<p>sudo make install</p>
+</blockquote>
+<p>then:&gt; sudo apt install python3-pip</p>
+<blockquote>
+<p>pip install eccodes</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>11- Check for installed HDF4, HDF5, GDAL and GeoTIFF:</p>
+<blockquote>
+<p>dpkg -l | grep hdf4</p>
+<p>dpkg -l | grep hdf5</p>
+<p>dpkg -l | grep gdal</p>
+<p>dpkg -l | grep geotiff</p>
+</blockquote>
+<p>If each of them is not installed you can use the method from:<a href="https://github.com/NASA-LIS/LISF/blob/master/docs/LDT_users_guide/build.adoc">https://github.com/NASA-LIS/LISF/blob/master/docs/LDT_users_guide/build.adoc</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>12- For use Grib API it is necessary to instal jasper:</p>
+<blockquote>
+<p>sudo apt install jasper</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>13- sudo apt-get install libpng-dev</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>14- sudo apt-get install zlib1g-dev</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>15- sudo apt-get install libjpeg8-dev</p>
+<p>16- sudo apt-get install flex bison</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>17- Install SZIP:</p>
+<blockquote>
+<p>Download src from <a href="https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz">https://support.hdfgroup.org/ftp/lib-external/szip/2.1.1/src/szip-2.1.1.tar.gz</a>
+Unzip and go in it within terminal:
+./configure –-prefix=/where_to_install (such as:/home/nilik/MYPROGRAMS/szip)
+make</p>
+<p>make check</p>
+<p>make install</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>18- Install HDF4</p>
+<p>Download HDF4.2.15 from <a href="https://portal.hdfgroup.org/display/support/HDF+4.2.15#files">https://portal.hdfgroup.org/display/support/HDF+4.2.15#files</a></p>
+<blockquote>
+<p>Extract the source from the hdf-X.Y.Z.tar file and change directory to hdf-4.2.15</p>
+</blockquote>
+<p>[ <em>For prevent error:configure: error: couldn't find rpc headers:</em>
+Replace HDF4 version from 4.2.13 to 4.2.15 to fix the error. Then you will get the next configure error:</p>
+<p>configure: error: couldn't find rpc headers</p>
+<p>To fix it edit "configure" file from HDF4 v4.3.15 sources and replace line 23672:</p>
+
+<pre><code>CPPFLAGS="$SYSCPPFLAGS -I/usr/include/tirpc"</code></pre>
+<p>to</p>
+
+<pre><code>CPPFLAGS="$SYSCPPFLAGS -I/usr/include/tirpc"
+
+unset ac_cv_header_rpc_rpc_h</code></pre>
+<p>SRC: <a href="https://gitlab.orfeo-toolbox.org/maja/maja/-/issues/207">https://gitlab.orfeo-toolbox.org/maja/maja/-/issues/207</a> ]</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>For Install HDF4:</li>
+</ul>
+<p>It is very very important first:</p>
+<blockquote>
+<p>sudo -i</p>
+</blockquote>
+<p>Then:&gt; cd /home/nilik/Temp/hdf-4.2.15       (where unrared HDF4 source code)
+Then:</p>
+<blockquote>
+<p>export FCFLAGS="-w -fallow-argument-mismatch -O2"</p>
+<p>export FFLAGS="-w -fallow-argument-mismatch -O2"</p>
+<p>export FFLAGS="-w -fno-second-underscore -O2"</p>
+<p>./configure --with-zlib=/usr --with-jpeg=/usr --disable-netcdf --prefix=/home/nilik/MYPROGRAMS/hdf4</p>
+<p>gmake</p>
+<p>gmake check</p>
+<p>gmake install</p>
+</blockquote>
+<p><em>After install it is important to check that is there “hdf.f90” in “/home/nilik/MYPROGRAMS/hdf4/include” directory or not? It should be created.</em></p>
+<p>(<a href="https://www.programmersought.com/article/34565557036/">https://www.programmersought.com/article/34565557036/</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>19- Install HDFEOS:</p>
+<p>download HDFEOS from (with VPN): <a href="https://wiki.earthdata.nasa.gov/display/DAS/Toolkit+Downloads">https://wiki.earthdata.nasa.gov/display/DAS/Toolkit+Downloads</a></p>
+<p><a href="https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos/cb0f900d2732ab01e51284d6c9e90d0e852d61bba9bce3b43af0430ab5414903?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS2.20v1.00.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS2.20v1.00.tar.Z">https://git.earthdata.nasa.gov/rest/git-lfs/storage/DAS/hdfeos/cb0f900d2732ab01e51284d6c9e90d0e852d61bba9bce3b43af0430ab5414903?response-content-disposition=attachment%3B%20filename%3D%22HDF-EOS2.20v1.00.tar.Z%22%3B%20filename*%3Dutf-8%27%27HDF-EOS2.20v1.00.tar.Z</a></p>
+<blockquote>
+<p>./configure --prefix=/usr/local/hdfeos CC='/usr/lib/bin/h4cc -Df2cFortran' --enable-install_include</p>
+<p>sudo make</p>
+<p>sudo make install</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-ESMF-final-method">
+<a class="anchor" href="#Install-ESMF-final-method" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install ESMF final method<a class="anchor-link" href="#Install-ESMF-final-method"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>src:<a href="https://earthscience.stackexchange.com/questions/18758/how-to-install-esmf-and-esmfpy-in-ubuntu-using-gfortran-gcc-python">https://earthscience.stackexchange.com/questions/18758/how-to-install-esmf-and-esmfpy-in-ubuntu-using-gfortran-gcc-python</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Very-important-NOTE:">
+<a class="anchor" href="#Very-important-NOTE:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Very important NOTE:<a class="anchor-link" href="#Very-important-NOTE:"> </a>
+</h3>
+<p>For everytime to install new or refresh ESMF installation it is necessary to check below codes and then define the following environmental variables!</p>
+<blockquote>
+<p>sudo apt-get install git tcsh pkg-config
+sudo apt-get install gfortran
+sudo apt-get install netcdf-bin libnetcdf-dev libnetcdff-dev
+sudo apt-get install openmpi-bin libopenmpi-dev
+sudo apt-get install libnetcdff-dev</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1- Download ESMF == <a href="http://earthsystemmodeling.org/download/">http://earthsystemmodeling.org/download/</a></p>
+<p>2- Extract ESMF downloaded == /home/nilik/Temp/esmf-ESMF_8_1_1</p>
+<p>3- login as root using</p>
+<blockquote>
+<p>sudo -i</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>4- Define the following environment variables:</p>
+<blockquote>
+<p>cd /home/nilik/Temp/esmf-ESMF_8_1_1</p>
+<p>export ESMF_DIR=/home/nilik/Temp/esmf-ESMF_8_1_1</p>
+<p>export ESMF_INSTALL_PREFIX=/home/nilik/MYPROGRAMS/LDT/ESMF</p>
+<p>export ESMF_OS=Linux</p>
+<p>export ESMF_NETCDF=/usr/include</p>
+<p>export ESMF_COMM=mpiuni</p>
+<p>export ESMF_NETCDF_INCLUDE=/usr/local/include</p>
+<p>export ESMF_NETCDF_LIBS="-lnetcdf -lnetcdff"</p>
+<p>export ESMF_NETCDF_LIBPATH=/usr/local/lib</p>
+</blockquote>
+<p>5- Run the following syntax to make the library ESMF:&gt; make all</p>
+<blockquote>
+<p>make install</p>
+<p>make installcheck</p>
+<p>export ESMF_INC=$ESMF_INSTALL_PREFIX/include</p>
+<p>export ESMF_LIB=$ESMF_INSTALL_PREFIX/lib/libO/Linux.intel.64.intelmpi.default</p>
+<p>export ESMFMKFILE=$ESMF_INSTALL_PREFIX/lib/libO/Linux.intel.64.intelmpi.default/esmf.mk</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>6- Install the ESMF python library:</p>
+<blockquote>
+<p>cd /home/nilik/Temp/esmf-ESMF_8_1_1/src/addon/ESMPy</p>
+<p>python3 setup.py build --ESMFMKFILE=/home/nilik/MYPROGRAMS/LDT/ESMF/lib/libO/Linux.gfortran.64.mpiuni.default/esmf.mk</p>
+<p>sudo python3 setup.py install</p>
+</blockquote>
+<p>7- Check the installation by:&gt; $ python</p>
+<blockquote>
+<p>import ESMF</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Compile-LDT">
+<a class="anchor" href="#Compile-LDT" aria-hidden="true"><span class="octicon octicon-link"></span></a>Compile LDT<a class="anchor-link" href="#Compile-LDT"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>Note: If you compile LDT before for new build or new compile LDT you must run 'sudo make realclean' in the ldt/make directory before new running</em></p>
+<p>1- Download LIS NASA from <a href="https://lis.gsfc.nasa.gov/">https://lis.gsfc.nasa.gov/</a> OR <a href="https://github.com/NASA-LIS/LISF/releases/tag/v7.3.1-public">https://github.com/NASA-LIS/LISF/releases/tag/v7.3.1-public</a></p>
+<p>2- Unpack in TOPLEVELDIR</p>
+<p>3- Open terminal in "/home/nilik/MYPROGRAMS/LDT/TOPLEVELDIR/ldt" then:</p>
+<blockquote>
+<p>export LDT_SRC=/home/nilik/MYPROGRAMS/LDT/TOPLEVELDIR/ldt</p>
+<p>export LDT_ARCH=linux_gfortran</p>
+<p>export LDT_FC=gfortran</p>
+<p>export LDT_CC=gcc</p>
+<p>export LDT_MODESMF=/home/nilik/MYPROGRAMS/LDT/ESMF/mod/modO/Linux.gfortran.64.mpiuni.default</p>
+<p>export LDT_LIBESMF=/home/nilik/MYPROGRAMS/LDT/ESMF/lib/libO/Linux.gfortran.64.mpiuni.default</p>
+<p>export LDT_NETCDF=/usr</p>
+<p>export LDT_HDF5=/usr/lib/x86_64-linux-gnu/hdf5/serial</p>
+<p>export LDT_HDF4=/home/nilik/MYPROGRAMS/hdf4</p>
+<p>export LDT_HDFEOS=/usr/local/hdfeos</p>
+<p>export LDT_ECCODES=/usr/local</p>
+<p>export LDT_OPENJPEG=/usr</p>
+<p>./configure</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Notes:">
+<a class="anchor" href="#Notes:" aria-hidden="true"><span class="octicon octicon-link"></span></a>Notes:<a class="anchor-link" href="#Notes:"> </a>
+</h3>
+<p>Before run compile add <em>"-lrt"</em> to the <em>LDFLAGS</em> line of make/configure.ldt and then compile.</p>
+<p>AND</p>
+<p>For prevent errors when compile such as: "Error: Type mismatch between actual argument at (1) and actual argument at (2)..." etc.</p>
+<p>It is neccessary to add</p>
+
+<pre><code>-finit-local-zero -fno-strict-overflow -fallow-argument-mismatch -fallow-invalid-boz</code></pre>
+<p>in <em>"FFLAGS"</em> of configure file.</p>
+<p>AND</p>
+<p>add <em>“-ltirpc”</em> to <em>LDFLAGS</em> for activate XDR in LDT compile.</p>
+<p>Example:</p>
+
+<pre><code>
+FFLAGS          =  -c -pass-exit-codes -ffree-line-length-0 -O2   -fconvert=big-endian -DGFORTRAN -I$(MOD_ESMF)  -I$(INC_ECCODES) -I$(INC_NETCDF)  -I$(INC_HDFEOS)  -I$(INC_HDF4)  -I$(INC_HDF5) -finit-local-zero -fno-strict-overflow -fallow-argument-mismatch -fallow-invalid-boz
+
+LDFLAGS         =  -L$(LIB_ESMF) -lesmf -lstdc++ -lrt -lz -L$(LIB_ECCODES) -leccodes_f90 -leccodes -L$(LIB_JPEG2000) -lopenjp2 -L$(LIB_NETCDF) -lnetcdff -lnetcdf -L$(LIB_HDF5) -lhdf5_fortran -lhdf5_hl -lhdf5 -ldl -ltirpc</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>4-</p>
+<blockquote>
+<p>./compile</p>
+</blockquote>
+<p>OR</p>
+<blockquote>
+<p>./compile &gt;make.log 2&gt;&amp;1            (for create a log file)</p>
+</blockquote>
+<p><em>Note:For error of "/usr/bin/env: ‘python’: No such file or directory" when run compile, install python3 with:</em></p>
+<blockquote>
+<p>sudo apt-get install python-is-python3</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>NOTE: After Compiled Finished "LDT" file created in ldt directory.</strong></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Using-LDT">
+<a class="anchor" href="#Using-LDT" aria-hidden="true"><span class="octicon octicon-link"></span></a>Using LDT<a class="anchor-link" href="#Using-LDT"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For use LDT executable file that created in the previous steps, It is best to test LDT with LIS tutorials.</p>
+<p>So, for do that the "testcase1_ldt_parms_2020" is best for start.
+Base on "LDT_Parameters_Testcase_Step1.pdf" of LIS Testcases I did below steps.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1- Build a new folder as name as "RUNNING" in "/home/nilik/Temp"</p>
+<p>2- Copy contents of "testcase1_ldt_parms_2020" directory to RUNNING.</p>
+<p>3- Copy LDT executable file created to RUNNING.</p>
+<p>4- Open terminal in this folder</p>
+<p>5- type: ":~/RUNNING$ ulimit -s unlimited"</p>
+<p>6- type: "$ ./LDT ldt.config.noah36_params"</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>7- ERROR:</p>
+<p>"./LDT: error while loading shared libraries: libesmf.so: cannot open shared object file: No such file or directory"</p>
+<p><em>For solve error you must define corrct path for "libesmf.so", so:</em></p>
+
+<pre><code>":~/RUNNING$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/nilik/MYPROGRAMS/LDT/ESMF/lib/libO/Linux.gfortran.64.mpiuni.default"</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>8- Again run:</p>
+
+<pre><code>"$ ./LDT ldt.config.noah36_params"</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>9- ERROR:</p>
+
+<pre><code>./LDT: error while loading shared libraries: libeccodes_f90.so: cannot open shared object file: No such file or directory</code></pre>
+<p>For solve error you must define correct path for "libeccodes_f90.so", so:</p>
+
+<pre><code>:~/RUNNING$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hm/ecCodes/lib</code></pre>
+<p>In sum:</p>
+
+<pre><code>:~/RUNNING$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hm/esmf/lib/libO/Linux.gfortran.64.mpiuni.default
+:~/RUNNING$ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/home/hm/ecCodes/lib</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>10- Again run:</p>
+
+<pre><code>$ ./LDT ldt.config.noah36_params</code></pre>
+<p>11- After a little time the program stopped without any error message while two new files include <strong>ldtlog.0000</strong> and <strong>MaskParamFill.log</strong> created. It seems that there is a problem. So, with comparison of <strong>MaskParamFill.log</strong> created and <strong>target_MaskParamFill.log</strong> in "target_log" directory it can be know the problem.</p>
+<p>12- In <strong>MaskParamFill.log</strong> file created there are only 16 lines but in "target_MaskParamFill.log" file there are more.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>13- In line 17 of <strong>target_MaskParamFill.log</strong> file:</p>
+
+<pre><code> Checking/filling mask values for: MXSNALBEDO</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>It seems that the problem may related to Max Snow Albedo. In addition based on answer the quesion in "<a href="https://modelingguru.nasa.gov/message/10861#10861">https://modelingguru.nasa.gov/message/10861#10861</a>", this problem can be related to <strong>HDF4</strong>. In previous steps I didn't use HDF4 for LDT compilation. 
+ "HDF4 is required to read the max snow albedo dataset for the first step of the public testcases."</p>
+<p>I reinstalled HDF4 again correctly and run LDT correctly :)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>AFTER INSTALL CORRECTLY LIBRARIES AGAIN in UBUNTU-BUDGIE,
+I CAN RUN FIRST TESTCASE WITH NAME of <em>testcase1_ldt_parms_2020</em>.</p>
+<p>NOW I SHOULD USE LDT FOR MY STUDY AREA AND MERRA-2 DATASET</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="More-about-LDT">
+<a class="anchor" href="#More-about-LDT" aria-hidden="true"><span class="octicon octicon-link"></span></a>More about LDT<a class="anchor-link" href="#More-about-LDT"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Native-Datasets">
+<a class="anchor" href="#Native-Datasets" aria-hidden="true"><span class="octicon octicon-link"></span></a>Native Datasets<a class="anchor-link" href="#Native-Datasets"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Native Model Parameters for LDT.
+The "Native" model parameters and data sets are obtained from different data providers, including data centers (e.g., NASA's GES DISC), government and university partners (e.g., NOAA websites).
+To help users become more familiar with the use of these datasets, several examples are provided in our latest test case suite. These use cases should be helpful in learning how to run LDT and process the "native" parameters onto a target grid and region of interest.</p>
+<p>Some examples of "native" parameters and data include:</p>
+
+<pre><code>• MODIS-IGBP landcover 
+• STATSGO+FAO soil texture 
+• SRTM topographic maps (e.g., elevation, slope) 
+• and many other model inputs (e.g., different Noah land model versions) 
+
+</code></pre>
+<p>(src: <a href="https://lis.gsfc.nasa.gov/data/ldt/native">https://lis.gsfc.nasa.gov/data/ldt/native</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Land-surface-Data-Toolkit">
+<a class="anchor" href="#Land-surface-Data-Toolkit" aria-hidden="true"><span class="octicon octicon-link"></span></a>Land surface Data Toolkit<a class="anchor-link" href="#Land-surface-Data-Toolkit"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The Land surface Data Toolkit (LDT) is the front-end processor for the Land Information System (LIS), versions 7 and greater.  It provides an environment for processing land model data and parameters, as well as restart files and data assimilation based inputs (e.g., for bias correction methods), and other data inputs for LIS and LVT (Arsenault et al., 2018).</p>
+<p>LDT also offers a variety of inputs and user options to process datasets and is designed with not only LIS in mind, but for other independent model and modeling systems as well. LDT supports the use of common data formats, like NetCDF, which provide detailed data header information.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<center><img src="images/ldt.png" width="500" height="500"></center>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Some Major Features</strong></p>
+
+<pre><code>• Processes data inputs for land surface, hydrological, and lake models. 
+• Writes output in NetCDF, a common descriptive format. 
+• Supports multiple observational data sources. 
+• Offers a variety of projections and grid transformation options. 
+• Includes numerous options for processing parameters (e.g., agreement between parameters). 
+• Can function as a stand-alone land surface and data assimilation input processor in addition to being a pre-processor for LIS. </code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>New Data Options</strong></p>
+<p>LDT is designed to read "native" model parameters and data files available from their original sources, as well as being backward-compatible with the original LIS-generated binary-formatted parameter datasets. Please note that the LIS team is now moving away from these older LIS binary-formatted files.</p>
+<p><strong>Philosophy</strong></p>
+<p>LDT has been designed and developed to read in what are considered the "native" or raw original data files as how they are provided by a data center, government agency, university group, etc.
+This philosophy that data and model parameter files should be read in from their "native" grids and file formats and be written to a common descriptive data format, like NetCDF, is supported throughout all of the LIS framework software.</p>
+<p><strong>Capabilities</strong></p>
+<p>LDT's Functional Goals involve developing certain key features, which include:
+    • Process surface model (e.g., land surface models) parameters onto a common grid domain. 
+    • Generate model initial conditions (e.g., model ensemble initialization). 
+    • Generate CDF statistics that can be used in LIS during data assimilation updates. 
+    • Implement and apply quality control measures to parameters, independent validation datasets, etc. 
+    • Process and temporally downscale meteorological forcing datasets. 
+    • Support for processing observations for data assimilation procedures in LIS. 
+    • Machine learning layer being developed and expanded for more applications.</p>
+<p>(src: <a href="https://lis.gsfc.nasa.gov/software/ldt">https://lis.gsfc.nasa.gov/software/ldt</a>)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><em>What land surface models (LSMs) are currently supported within the LIS framework?</em></p>
+<p>The current public versions of LIS support the following LSMs:</p>
+
+<pre><code>• Noah 2.7.1 
+• Noah 3.2 
+• Noah 3.3 
+• Noah 3.6 
+• Noah 3.9 
+• Noah Multi-Physics (MP), version 3.6 
+• Catchment LSM (CLSM), Fortuna 2.5 version 
+• VIC 4.1.1 
+• VIC 4.1.2 
+• SAC-HTET/SNOW-17 
+• GeoWRSI 2.0 
+• CLM 2.0 
+• Mosaic 
+• HY-SSib 
+
+</code></pre>
+<p><em>What projections are currently supported in LDT and LIS-7?</em></p>
+<p>Currently, several map projections are supported for both input parameters and the LIS target run grid. These include: 'latlon', 'lambert' (for lambert conformal), 'polar' (for polar stereographic), 'hrap' (for HRAP, a flavor of polar stereographic), 'mercator', and 'gaussian' (which is supported in LDT and will be for LIS-7 in future releases). Other projections, like 'UTM', will also be supported in future releases.</p>
+<p><em>What differences are involved with a "readin" landmask vs. wanting to "create" one?</em></p>
+<p>With LDT, LIS users can either "readin" an existing land-water mask or "create" one from the landcover map that is read in (e.g., a landmask derived from MODIS-IGBP, ESA). For most of LIS' history, most users were restricted to using just the "UMD" landmask, which came from the AVHRR satellite-based UMD classification map, circa 1992-1993. Today, LIS users have several different landcover datasets and classifications they can chose from, and from which they can create landmasks. Also, any other landmask can be read in, like the MODIS-based MOD44w landmask product, which is now used in the MODIS Collection 6 products.
+ 
+Because reading in or creating a landmask map may not share matching land points with other parameter maps read in (e.g., soil texture, elevation), "fill" options are provided in LDT to help ensure agreement  between the mask and the parameter fields. These "fill" routines are based on earlier code used to impose the "UMD" landmask on all of the original LIS-team produced binary files (aka, the "LIS-data" files). Also, the "fill" step occurs on the LIS output run domain after the spatial transform step is performed.</p>
+<p><em>What are the 'fill' options (e.g., fill radius)?</em></p>
+<p>The 'fill' options associated with each parameter entry in the LDT config file provide the user the ability to make sure the read-in or derived landmask and the read-in parameter files agree (i.e., same number of land points). Continuous type parameter files can utilize either 'neighbor' or 'average' options in using neighboring pixels to 'fill' in a missing parameter value when there is an actual valid land point (i.e., landmask = 1). Discrete data types can only use 'neighbor' option at this time (e.g., landcover, soil texture, etc.). Additional options include the 'fill radius' which the user can enter the number of row/column pixel area to search for neighboring valid parameter values. If no neighboring values are found (e.g., could be an island), the user can specify a 'generic fill' value for that given parameter (e.g., input the land class of 6 for the landcover parameter).</p>
+<p><em>What is a 'spatial tranform' and when is it applied?</em></p>
+<p>A 'spatial transform' entry in the run-time LDT configure (e.g., ldt.config) file allows the user to specify how a parameter file can be 'transformed' or translated from its 'native' or original projection and resolution to the designated LIS target grid projection and resolution.
+ 
+For example, you want to upscale your 0.01°, lat-lon grid landcover file to a 0.25°, lat-lon grid map. You can select 'tile' as the entry for the 'Landcover spatial transform:' option, and LDT will aggregate the landcover pixels to tile layers (i.e., fraction of each landcover type) within each 0.25° output gridcell. If you were to select 'mode' instead here, a value of "1" would be assigned to the most dominant vegetation layer, representing 100% coverage. Since landcover is a discrete data type, you would not want to select interpolation methods, like 'bilinear', or upscaling option, 'average' (or you would end up with a landcover type of 4.331!).
+ 
+For a downscaling example, you could have a 1.0°, lat-lon grid albedo map and you want to run on a 0.25°, lat-lon output grid. You could select 'bilinear' for interpolating the coarser albedo parameter map to the finer scale 0.25° map.</p>
+<p><em>What is the 'LIS' data format type?</em></p>
+<p>The other type of data read in by LDT includes the LIS team processed files referred to commonly as 'LIS' data. These original files are 4-byte real, big-endian, direct access, binary format, with the extension: *.1gd4r . One downside to using these datasets is that many of them have the "UMD" landmask imposed on all the parameter files, forcing users to use this older mask in their model runs. LDT, LIS and LVT are moving away from this data formatted file use.</p>
+<p><em>What are the 'Native' data files?</em></p>
+<p>When LDT was being developed, the LIS team decided to provide two pathways for the LIS user community for how data parameters can be read in to LDT and LIS-7. The first being that any original or 'native' model parameters and data provided by a government agency, university, organization, etc. should be read in "as-is" and not have any preprocessing done to the files. This "philosophy" is intended to better preserve the original data information and pixel integrity but also allow the user to select how the parameters get processed for their modeling needs.</p>
+<p><em>How does topographic downscaling of the bottom temperature field work?</em></p>
+<p>To capture some of the impact of terrain relief on bottom soil temperature field variability, you can turn the 'Bottom temperature topographic downscaling:' entry in the ldt.config file to "lapse-rate". You will also need to also turn on and read in an elevation map, preferably of higher resolution than your bottom temperature map. Then using the elevation file and the environmental lapse rate (~6.5 K/km), the bottom temperature file values are adjusted by the elevation values, representing what the soil temperature might reflect at a higher or lower elevation. This feature helps then give more detail in mountainous areas and capture local minimum temperatures in the soil temperatures than if not accounted for.</p>
+<p><em>What type of data assimilation inputs does LDT process?</em></p>
+<p>Currently, LDT can estimate the statistics required to do a simple bias-correction or scaling approach between similar observational data and model state estimates to reduce bias between the two during assimilation update step. LDT generates the mean, standard deviation and cumulative (probability) density function (CDF) values, which LIS-7 ingests to perform the final CDF "matching" between the observations and the model estimates.</p>
+<p><em>What LIS DA observation dataset types are supported in LDT and LIS?</em></p>
+<p>The current public LIS versions support the following data assimilation (DA) observation dataset types:</p>
+
+<pre><code>• Soil Moisture Active Passive (SMAP) soil moisture products 
+• NASA/Vrije U. Land Parameter Retrieval Model (LPRM) AMSR-e Soil Moisture data 
+• NASA/NSIDC AMSR-e Soil Moisture data 
+• Essential Climate Variable (ECV) Satellite-based Soil Moisture analysis 
+• TU Wien ASCAT Soil Moisture (retrospective) 
+• NESDIS/OSPO Soil Moisture Operational Products System (SMOPS) Soil Moisture product 
+• WindSat satellite-based Soil Moisture Retrievals 
+• GRACE Terrestrial Water Storage (TWS) Estimates 
+• Synthetic Model-derived Soil Moisture output
+
+</code></pre>
+<p><em>What is an ensemble restart file?</em></p>
+<p>An ensemble restart file includes not only one single realization's set of model state variables required to initialize a LIS model run but several realizations, or ensemble members, to restart a multi-member or open-loop simulation.</p>
+<p><em>What is meant by upscaling or downscaling a restart file?</em></p>
+<p>Upscaling: refers to expanding a single-member (or realization) LIS-generated restart file to an ensemble of members (or model realizations) that can be used for ensemble model runs. This feature could be helpful to someone interested in performing a simulation of an ensemble of model realizations or data assimilation, but have only model member run for one single realization.</p>
+<p><strong>Downscaling</strong>: refers to averaging or collapsing a multi-member (or -realization) LIS-generated restart file to a single member (or model realization), making it essentially a climatological realization of the member (ensemble mean simulation).</p>
+
+</div>
+</div>
+</div>
+</div>
+
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="NILICK/hmbnn-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/hmbnn-blog/ldt/merra-2/downscale/lis/modeling/2021/06/08/LDT.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hmbnn-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hmbnn-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hmbnn-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A blog for learn about python programming in enviornmetal sciences modeling!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>My notes in Jupyterlab working | EnviSci-Py</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="My notes in Jupyterlab working" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This post is about notes from my experineces in work with Jupyterlab" />
+<meta property="og:description" content="This post is about notes from my experineces in work with Jupyterlab" />
+<link rel="canonical" href="nilick.github.io/hmbnn-blog/jupyterlab/notes/2021/06/07/My-Notes-Jupyterlab.html" />
+<meta property="og:url" content="nilick.github.io/hmbnn-blog/jupyterlab/notes/2021/06/07/My-Notes-Jupyterlab.html" />
+<meta property="og:site_name" content="EnviSci-Py" />
+<meta property="og:image" content="nilick.github.io/hmbnn-blog/images/jupyterlab.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2021-06-07T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"This post is about notes from my experineces in work with Jupyterlab","url":"nilick.github.io/hmbnn-blog/jupyterlab/notes/2021/06/07/My-Notes-Jupyterlab.html","@type":"BlogPosting","headline":"My notes in Jupyterlab working","dateModified":"2021-06-07T00:00:00-05:00","datePublished":"2021-06-07T00:00:00-05:00","image":"nilick.github.io/hmbnn-blog/images/jupyterlab.png","mainEntityOfPage":{"@type":"WebPage","@id":"nilick.github.io/hmbnn-blog/jupyterlab/notes/2021/06/07/My-Notes-Jupyterlab.html"},"@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/hmbnn-blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="nilick.github.io/hmbnn-blog/feed.xml" title="EnviSci-Py" /><link rel="shortcut icon" type="image/x-icon" href="/hmbnn-blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/hmbnn-blog/">EnviSci-Py</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/hmbnn-blog/about/">About Me</a><a class="page-link" href="/hmbnn-blog/search/">Search</a><a class="page-link" href="/hmbnn-blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">My notes in Jupyterlab working</h1><p class="page-description">This post is about notes from my experineces in work with Jupyterlab</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2021-06-07T00:00:00-05:00" itemprop="datePublished">
+        Jun 7, 2021
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      5 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#jupyterlab">jupyterlab</a>
+        &nbsp;
+      
+        <a class="category-tags-link" href="/hmbnn-blog/categories/#notes">notes</a>
+        
+      
+      </p>
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          
+          
+          
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Jupyterlab-spellchecker">Jupyterlab spellchecker </a></li>
+<li class="toc-entry toc-h2"><a href="#Uninstall-full-program">Uninstall full program </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-fonts">Install fonts </a></li>
+<li class="toc-entry toc-h2"><a href="#Show-disk-space">Show disk space </a></li>
+<li class="toc-entry toc-h2"><a href="#Clean-Ubuntu">Clean Ubuntu </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-Miniconda">Install Miniconda </a></li>
+<li class="toc-entry toc-h2"><a href="#Create-and-activate-the-conda-environment">Create and activate the conda environment </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-Packages">Install Packages </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-Jupyterlab">Install Jupyterlab </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-packages-in-Jupyterlab">Install packages in Jupyterlab </a></li>
+<li class="toc-entry toc-h2"><a href="#Install-Rasterio">Install Rasterio </a></li>
+<li class="toc-entry toc-h2"><a href="#Cartopy-or-Basemap">Cartopy or Basemap </a></li>
+<li class="toc-entry toc-h2"><a href="#For-UPDATE">For UPDATE </a></li>
+<li class="toc-entry toc-h2"><a href="#Run-plotly-in-jupyterlab">Run plotly in jupyterlab </a></li>
+<li class="toc-entry toc-h2"><a href="#Persian-fornt">Persian fornt </a></li>
+<li class="toc-entry toc-h2"><a href="#Markdown-Formatting">Markdown Formatting </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Headings">Headings </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#H1">H1 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#H2">H2 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#H3">H3 </a>
+<ul>
+<li class="toc-entry toc-h4"><a href="#H4">H4 </a>
+<ul>
+<li class="toc-entry toc-h5"><a href="#H5">H5 </a>
+<ul>
+<li class="toc-entry toc-h6"><a href="#H6">H6 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-entry toc-h1"><a href="#Alt-H1">Alt-H1 </a>
+<ul>
+<li class="toc-entry toc-h2"><a href="#Alt-H2">Alt-H2 </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Emphasis">Emphasis </a></li>
+<li class="toc-entry toc-h3"><a href="#Lists">Lists </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Shortcuts-and-tricks">Shortcuts and tricks </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Command-Mode-Shortcuts">Command Mode Shortcuts </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2021-06-07-My-Notes-Jupyterlab.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Jupyterlab-spellchecker">
+<a class="anchor" href="#Jupyterlab-spellchecker" aria-hidden="true"><span class="octicon octicon-link"></span></a>Jupyterlab spellchecker<a class="anchor-link" href="#Jupyterlab-spellchecker"> </a>
+</h2>
+<p>install:</p>
+<p>jupyter labextension install @ijmbarr/jupyterlab_spellchecker</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Uninstall-full-program">
+<a class="anchor" href="#Uninstall-full-program" aria-hidden="true"><span class="octicon octicon-link"></span></a>Uninstall full program<a class="anchor-link" href="#Uninstall-full-program"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>sudo apt-get purge package-name</p>
+<p>sudo apt-get autoremove</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-fonts">
+<a class="anchor" href="#Install-fonts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install fonts<a class="anchor-link" href="#Install-fonts"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>sudo apt install git</p>
+<p>git clone <a href="https://github.com/fzerorubigd/persian-fonts-linux.git">https://github.com/fzerorubigd/persian-fonts-linux.git</a></p>
+<p>cd persian-fonts-linux</p>
+<p>./farsifonts.sh</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Show-disk-space">
+<a class="anchor" href="#Show-disk-space" aria-hidden="true"><span class="octicon octicon-link"></span></a>Show disk space<a class="anchor-link" href="#Show-disk-space"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>df -h</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Clean-Ubuntu">
+<a class="anchor" href="#Clean-Ubuntu" aria-hidden="true"><span class="octicon octicon-link"></span></a>Clean Ubuntu<a class="anchor-link" href="#Clean-Ubuntu"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>sudo du -sh /var/cache/apt/archives</p>
+<p>sudo apt-get clean</p>
+<p>df -h</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-Miniconda">
+<a class="anchor" href="#Install-Miniconda" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Miniconda<a class="anchor-link" href="#Install-Miniconda"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<blockquote>
+<p>Best resources for install Anaconda or Miniconda with spatial packages*</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><a href="https://medium.com/@chrieke/howto-install-python-for-geospatial-applications-1dbc82433c05">https://medium.com/@chrieke/howto-install-python-for-geospatial-applications-1dbc82433c05</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Download miniconda python 3.7 (some packages do not work with python 3.8)
+<a href="https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh">https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To install Miniconda on Ubuntu 20.04 from command line,
+it only takes 3 steps excluding creating and activating a conda environment.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>1-Download the latest shell script
+<em>wget <a href="https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh">https://repo.anaconda.com/miniconda/Miniconda3-py37_4.8.3-Linux-x86_64.sh</a></em></p>
+<p>2-Make the miniconda installation script executable:
+<em>chmod +x Miniconda3-py37_4.8.3-Linux-x86_64.sh</em></p>
+<p>3-Run miniconda installation script:
+<em>./Miniconda3-py37_4.8.3-Linux-x86_64.sh</em></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Create-and-activate-the-conda-environment">
+<a class="anchor" href="#Create-and-activate-the-conda-environment" aria-hidden="true"><span class="octicon octicon-link"></span></a>Create and activate the conda environment<a class="anchor-link" href="#Create-and-activate-the-conda-environment"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>To create a conda environment, run conda create -n newenv</p>
+<p>You can also create the environment from a file like <em>environment.yml</em>, you can use use the conda env create -f command:</p>
+<blockquote>
+<p>conda env create -f environment.yml</p>
+</blockquote>
+<p>The environment name will be the directory name.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-Packages">
+<a class="anchor" href="#Install-Packages" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Packages<a class="anchor-link" href="#Install-Packages"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Install miniconda</li>
+<li>Anaconda Prompt (miniconda3)[Open miniconda]</li>
+<li>conda update -n base -c defaults conda [Update Conda installed]</li>
+<li>conda install -c anaconda anaconda-navigator [Install Navigator]</li>
+<li>Open Anaconda Navigator</li>
+<li>Open terminal</li>
+<li>conda install -c conda-forge gdal [Install GDAL]</li>
+<li>conda install -c anaconda numpy</li>
+<li>conda install -c anaconda pandas</li>
+<li>conda install -c conda-forge geopandas</li>
+<li>conda install -c anaconda xarray</li>
+<li>conda install -c conda-forge matplotlib</li>
+<li>conda install -c conda-forge cartopy</li>
+<li>conda install -c conda-forge descartes [for countries plot in cartopy]</li>
+<li>conda install -c conda-forge shapely</li>
+<li>conda install -c conda-forge fiona</li>
+<li>conda install -c conda-forge pyproj</li>
+<li>conda install -c conda-forge bqplot</li>
+<li>conda install -c conda-forge ipyleaflet</li>
+<li>conda install -c conda-forge nodejs<blockquote>
+<p>npm install npm@latest -g [<a href="https://nodejs.org/en/">https://nodejs.org/en/</a>]</p>
+</blockquote>
+</li>
+<li>conda list</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-Jupyterlab">
+<a class="anchor" href="#Install-Jupyterlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Jupyterlab<a class="anchor-link" href="#Install-Jupyterlab"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>-conda install -c conda-forge jupyterlab</p>
+<p>-In terminal type: jupyter lab [Open jupyterlab in default browser]</p>
+<p>-Ctrl+C or Ctrl+Conda [Close]</p>
+<p>-jupyter notebook --generate-config [Change Workdirectory]</p>
+
+<pre><code>open "jupyter_notebook_config.py" file
+Find " #c.NotebookApp.notebook_dir=' ' "
+Change to " c.NotebookApp.notebook_dir = '~/Anaconda_Projects' "
+In terminal type: jupyter lab</code></pre>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-packages-in-Jupyterlab">
+<a class="anchor" href="#Install-packages-in-Jupyterlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install packages in Jupyterlab<a class="anchor-link" href="#Install-packages-in-Jupyterlab"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet</li>
+</ul>
+<p>(<a href="https://ipyleaflet.readthedocs.io/en/latest/api_reference/basemaps.html">https://ipyleaflet.readthedocs.io/en/latest/api_reference/basemaps.html</a>)</p>
+<p>-jupyter labextension install @jupyter-widgets/jupyterlab-manager</p>
+<p>-jupyter lab build</p>
+<p>-jupyter nbextension enable --py widgetsnbextension --sys-prefix</p>
+<p>-pip install sidecar</p>
+<p>-jupyter labextension install @jupyter-widgets/jupyterlab-manager</p>
+<p>-jupyter labextension install @jupyter-widgets/jupyterlab-sidecar</p>
+<p>-conda install -c pyviz holoviews bokeh</p>
+<blockquote>
+<p>jupyter labextension install @pyviz/jupyterlab_pyviz</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Install-Rasterio">
+<a class="anchor" href="#Install-Rasterio" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install Rasterio<a class="anchor-link" href="#Install-Rasterio"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>rasterio package must be install with gdal, from " <a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal">https://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal</a> " yuou can find last gdal and rasterio wheel files, then run something like this from the downloads folder:</p>
+<p>pip install GDAL-3.1.2-cp39-cp39-win_amd64.whl rasterio-1.1.5-cp39-cp39-win_amd64.whl</p>
+<p>conda install -c conda-forge rasterio</p>
+<blockquote>
+<p>[with python 3.7 (rasterio works with this version)
+Rasterio 1.0.x works with Python versions 2.7.x and 3.5.0 through 3.7.x, and GDAL versions 1.11.x through 2.4.x. 
+Rasterio 1.0.x is not compatible with GDAL versions 3.0.0 or greater.]</p>
+</blockquote>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>-with the below command and after failed and failed, installed finally.&lt;/br&gt;
+conda install -c <a href="https://conda.anaconda.org/ioos">https://conda.anaconda.org/ioos</a> rasterio</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Cartopy-or-Basemap">
+<a class="anchor" href="#Cartopy-or-Basemap" aria-hidden="true"><span class="octicon octicon-link"></span></a>Cartopy or Basemap<a class="anchor-link" href="#Cartopy-or-Basemap"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Basemap is going away and being replaced with Cartopy in the near future. For this reason, new python learners are recommended to learn Cartopy.
+So, install cartopy.</p>
+<p>NOTE: DO NOT INSTALL cartopy with basemap, they are conflict.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="For-UPDATE">
+<a class="anchor" href="#For-UPDATE" aria-hidden="true"><span class="octicon octicon-link"></span></a>For UPDATE<a class="anchor-link" href="#For-UPDATE"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>
+<p>pip uninstall -y setuptools</p>
+</li>
+<li>
+<p>pip install setuptools</p>
+</li>
+<li>
+<p>conda update conda</p>
+</li>
+<li>
+<p>conda update -all</p>
+</li>
+<li>
+<p>conda update -n base -c defaults conda</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Run-plotly-in-jupyterlab">
+<a class="anchor" href="#Run-plotly-in-jupyterlab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Run plotly in jupyterlab<a class="anchor-link" href="#Run-plotly-in-jupyterlab"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>For use in Jupyter lab, you will have to install the plotly jupyterlab extension:</p>
+<p>jupyter labextension install jupyterlab-plotly</p>
+<p>OR</p>
+<p>jupyter labextension install @jupyterlab/plotly-extension</p>
+<p>jupyter labextension list</p>
+<p>jupyter lab build</p>
+<p>Then reopen anaconda jupyterlab</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Persian-fornt">
+<a class="anchor" href="#Persian-fornt" aria-hidden="true"><span class="octicon octicon-link"></span></a>Persian fornt<a class="anchor-link" href="#Persian-fornt"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>pip install python-bidi</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>-lpympl</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Markdown-Formatting">
+<a class="anchor" href="#Markdown-Formatting" aria-hidden="true"><span class="octicon octicon-link"></span></a>Markdown Formatting<a class="anchor-link" href="#Markdown-Formatting"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The five most important concepts to format your code appropriately when using markdown are:</p>
+<ol>
+<li>
+<em>Italics</em>: Surround your text with '_' or '*'</li>
+<li>
+<strong>Bold</strong>: Surround your text with '__' or '**'</li>
+<li>
+<code>inline</code>: Surround your text with '`'</li>
+<li>
+<blockquote>
+<p>blockquote: Place '&gt;' before your text.</p>
+</blockquote>
+</li>
+<li>
+<a href="https://github.com/ncar-hackathons">Links</a>: Surround the text you want to link with '[]' and place the link adjacent to the text, surrounded with '()'</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Headings">
+<a class="anchor" href="#Headings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Headings<a class="anchor-link" href="#Headings"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Notice that including a hashtag before the text in a markdown cell makes the text a heading. The number of hashtags you include will determine the priority of the header ('#' is level one, '##' is level two, '###' is level three and '####' is level four).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+
+<pre><code>no-highlight
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
+
+Alternatively, for H1 and H2, an underline-ish style:
+
+Alt-H1
+======
+
+Alt-H2
+------</code></pre>
+<h1 id="H1">
+<a class="anchor" href="#H1" aria-hidden="true"><span class="octicon octicon-link"></span></a>H1<a class="anchor-link" href="#H1"> </a>
+</h1>
+<h2 id="H2">
+<a class="anchor" href="#H2" aria-hidden="true"><span class="octicon octicon-link"></span></a>H2<a class="anchor-link" href="#H2"> </a>
+</h2>
+<h3 id="H3">
+<a class="anchor" href="#H3" aria-hidden="true"><span class="octicon octicon-link"></span></a>H3<a class="anchor-link" href="#H3"> </a>
+</h3>
+<h4 id="H4">
+<a class="anchor" href="#H4" aria-hidden="true"><span class="octicon octicon-link"></span></a>H4<a class="anchor-link" href="#H4"> </a>
+</h4>
+<h5 id="H5">
+<a class="anchor" href="#H5" aria-hidden="true"><span class="octicon octicon-link"></span></a>H5<a class="anchor-link" href="#H5"> </a>
+</h5>
+<h6 id="H6">
+<a class="anchor" href="#H6" aria-hidden="true"><span class="octicon octicon-link"></span></a>H6<a class="anchor-link" href="#H6"> </a>
+</h6>
+<p>Alternatively, for H1 and H2, an underline-ish style:</p>
+<h1 id="Alt-H1">
+<a class="anchor" href="#Alt-H1" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alt-H1<a class="anchor-link" href="#Alt-H1"> </a>
+</h1>
+<h2 id="Alt-H2">
+<a class="anchor" href="#Alt-H2" aria-hidden="true"><span class="octicon octicon-link"></span></a>Alt-H2<a class="anchor-link" href="#Alt-H2"> </a>
+</h2>
+<p><a name="emphasis"></a></p>
+<h3 id="Emphasis">
+<a class="anchor" href="#Emphasis" aria-hidden="true"><span class="octicon octicon-link"></span></a>Emphasis<a class="anchor-link" href="#Emphasis"> </a>
+</h3>
+<pre><code>no-highlight
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses two tildes. ~~Scratch this.~~</code></pre>
+<p>Emphasis, aka italics, with <em>asterisks</em> or <em>underscores</em>.</p>
+<p>Strong emphasis, aka bold, with <strong>asterisks</strong> or <strong>underscores</strong>.</p>
+<p>Combined emphasis with <strong>asterisks and <em>underscores</em></strong>.</p>
+<p>Strikethrough uses two tildes. <del>Scratch this.</del></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Lists">
+<a class="anchor" href="#Lists" aria-hidden="true"><span class="octicon octicon-link"></span></a>Lists<a class="anchor-link" href="#Lists"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are three types of lists in markdown.</p>
+<p>Ordered list:</p>
+<ol>
+<li>Step 1<ol>
+<li>Step 1B</li>
+</ol>
+</li>
+<li>Step 3</li>
+</ol>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Unordered list</p>
+<ul>
+<li>CESM-POP</li>
+<li>CESM-MOM</li>
+<li>CESM-CAM</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Task list</p>
+<ul>
+<li>[x] Learn Jupyter Notebooks<ul>
+<li>[x] Writing</li>
+<li>[x] Modes</li>
+<li>[x] Other Considerations</li>
+</ul>
+</li>
+<li>[ ] Submit Paper</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+<p><strong>NOTE:</strong></p>
+<p>Double click on each to see how they are built!</p>
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>$-b \pm \sqrt{b^2 - 4ac} \over 2a$
+$x = a_0 + \frac{1}{a_1 + \frac{1}{a_2 + \frac{1}{a_3 + a_4}}}$
+$\forall x \in X, \quad \exists y \leq \epsilon$</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Shortcuts-and-tricks">
+<a class="anchor" href="#Shortcuts-and-tricks" aria-hidden="true"><span class="octicon octicon-link"></span></a>Shortcuts and tricks<a class="anchor-link" href="#Shortcuts-and-tricks"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Command-Mode-Shortcuts">
+<a class="anchor" href="#Command-Mode-Shortcuts" aria-hidden="true"><span class="octicon octicon-link"></span></a>Command Mode Shortcuts<a class="anchor-link" href="#Command-Mode-Shortcuts"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are a couple of useful keyboard shortcuts in <code>Command Mode</code> that you can leverage to make Jupyter Notebook faster to use. Remember that to switch back and forth between <code>Command Mode</code> and <code>Edit Mode</code> with <kbd>Esc</kbd> and <kbd>Enter</kbd>.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>m</kbd>: Convert cell to Markdown</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>y</kbd>: Convert cell to Code</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>D</kbd>+<kbd>D</kbd>: Delete cell</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>o</kbd>: Toggle between hide or show output</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>Shift</kbd>+<kbd>Arrow up/Arrow down</kbd>: Selects multiple cells. Once you have selected them you can operate on them like a batch (run, copy, paste etc).</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>Shift</kbd>+<kbd>M</kbd>: Merge selected cells.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><kbd>Shift</kbd>+<kbd>Tab</kbd>: [press once] Tells you which parameters to pass on a function</p>
+<p><kbd>Shift</kbd>+<kbd>Tab</kbd>: [press three times] Gives additional information on the method</p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="NILICK/hmbnn-blog"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/hmbnn-blog/jupyterlab/notes/2021/06/07/My-Notes-Jupyterlab.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/hmbnn-blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/hmbnn-blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/hmbnn-blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>A blog for learn about python programming in enviornmetal sciences modeling!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
