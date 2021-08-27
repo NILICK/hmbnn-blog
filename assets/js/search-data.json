@@ -3,7 +3,7 @@
     
         "post0": {
             "title": "TEST TEST TEST",
-            "content": "from IPython.core.display import display, HTML display(HTML(filename = &#39;./htmls/scatterplot.html&#39;)) . &lt;!DOCTYPE html&gt; scatterplot . .",
+            "content": "from IPython.display import HTML display(HTML(filename = &#39;./htmls/scatterplot.html&#39;)) . &lt;!DOCTYPE html&gt; scatterplot . .",
             "url": "nilick.github.io/hmbnn-blog/merra2/downscale/ldt/drought/2021/08/27/TEST.html",
             "relUrl": "/merra2/downscale/ldt/drought/2021/08/27/TEST.html",
             "date": " • Aug 27, 2021"
